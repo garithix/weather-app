@@ -10,9 +10,9 @@
 
   <script>
     function updateTime() {
-      // BUG: Uses user's local time, not San Francisco time
       document.getElementById("time").innerText =
-        "Local time: " + new Date().toLocaleTimeString();
+        "Local time: " +
+        new Date().toLocaleTimeString("en-US", { timeZone: "America/Los_Angeles" });
     }
 
     async function getWeather() {
